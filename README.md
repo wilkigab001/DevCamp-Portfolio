@@ -15,6 +15,7 @@ To generate a new rails application, the command is:
 ```
 rails new AppName -T --database=postgresql
 ```
+kk
 
 Change into the app:
 
