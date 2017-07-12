@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portflio_item, only: [:edit, :update, :show, :destroy]
+  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout "portfolio"
   
   def index
@@ -51,7 +51,7 @@ class PortfoliosController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Record was Removed.' }
-      format.json { head :no_content }
+      #format.json { head :no_content }
     end
   end
   
@@ -65,7 +65,7 @@ class PortfoliosController < ApplicationController
                                       )
   end 
   
-  def set_portflio_item
+  def set_portfolio_item
         @portfolio_item = Portfolio.find(params[:id])
   end 
 end
