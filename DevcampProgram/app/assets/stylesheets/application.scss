@@ -184,10 +184,21 @@ body {
   float: none;
 }
 
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
+}
+
 .passwords-title {
   text-align: center;
 }
 
 .sign-up-title {
   text-align: center;
+}
+
+.app-nav span{
+  margin-left: 15px;
+  margin-right: 15px;
 }
