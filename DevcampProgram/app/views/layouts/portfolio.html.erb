@@ -16,8 +16,11 @@
 
   <%= render 'shared/portfolio_nav', location: 'top' %>
 
-  <%= render 'shared/portfolio_masthead' %>
-
+  <%= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+  
+  <div class="new-portfolio-link">
+    <%= link_to "New Portfolio", new_portfolio_path if logged_in?(:site_admin) %>
+  </div>
     <%= yield %>
 
   <%= render 'shared/portfolio_footer' %>
