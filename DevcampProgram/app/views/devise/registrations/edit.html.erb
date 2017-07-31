@@ -45,8 +45,26 @@
         </div>
       <% end %>
       </div>
+    
+      <div class="col-md-4">
+      <h3>User Status</h3>
+      <p>
+        <% if current_user.role == :site_admin %>
+           <p>You are a Site Admin </p>
+        <% else %>
+          <p>You are a User </p>
+          <p class="auth-links">Not correct? Click <%= link_to "here", update_params_path(resource_name) %> to change</p>
+        <% end %>
+      </p>
       
-      <div class= "col-md-4">
+      <hr>
+      
+      <h3>Account Details</h3>
+        <p>Created at <%= current_user.created_at.month %>/<%= current_user.created_at.day %>/<%= current_user.created_at.year %></p>
+        <p>Last updated at <%= current_user.created_at.month %>/<%= current_user.created_at.day %>/<%= current_user.created_at.year %></p>
+      
+      <hr>
+        
         <h3>Cancel my account</h3>
         
         <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
